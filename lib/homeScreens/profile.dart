@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:taksim_kapimda/profilescreens/SettingsAndSecurity.dart';
+import 'package:taksim_kapimda/taksiScreens/Taksilogin.dart';
 
 class Profile extends StatefulWidget {
   final String phoneNumber;
@@ -108,7 +110,7 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.car_rental),
               title: Text('Taksici Modu'),
               onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => TaksiLogin())),
+                  context, MaterialPageRoute(builder: (context) => TaksiGecisKontrolEkrani())),
             ),
             ListTile(
               leading: Icon(Icons.bar_chart),
@@ -118,7 +120,8 @@ class _ProfileState extends State<Profile> {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Ayarlar ve Güvenlik'),
-              onTap: () {},
+              onTap: ()  => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => SettingsAndSecurity(phoneNumber: widget.phoneNumber))),
             ),
             ListTile(
               leading: Icon(Icons.logout),
@@ -211,14 +214,4 @@ class _ProfileState extends State<Profile> {
   }
 }
 
-class TaksiLogin extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Taksici Modu'),
-      ),
-      body: Center(child: Text("Taksici modu açıldı.")),
-    );
-  }
-}
+
