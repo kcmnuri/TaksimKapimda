@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "183514899423",
+    "firebase_url": "https://taksikapim-default-rtdb.firebaseio.com",
+    "project_id": "taksikapim",
+    "storage_bucket": "taksikapim.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183514899423:android:eb2418de2a5ab04b5e9a6a",
+        "android_client_info": {
+          "package_name": "com.example.taksim_kapimda"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW0oiv-lR2tC6y_-kirAjWLBDQ01FLCoo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
