@@ -6,6 +6,9 @@ import 'package:taksim_kapimda/homeScreens/profile.dart';
 import 'package:taksim_kapimda/homeScreens/kampanyalar.dart';
 import 'package:taksim_kapimda/homeScreens/yardim.dart';
 import 'package:taksim_kapimda/homeScreens/gecmisyolculuklar.dart';
+import 'package:taksim_kapimda/screens/BekleyenIslemlerScreen.dart';
+
+import 'TaksiCagirScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   final String userPhone; // Kullanıcı telefon numarasıyla firebase datasına eriş
@@ -125,6 +128,12 @@ class _HomeScreenState extends State<HomeScreen> {
               }
               ),
             ListTile(
+              leading: Icon(Icons.add_alert),
+              title: Text('Bekleyen İşlemler'),
+              onTap: () =>  Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => BekleyenIslemlerSayfasi(telefon: widget.userPhone,))),
+            ),
+            ListTile(
               leading: Icon(Icons.history),
               title: Text('Geçmiş Yolculuklarım'),
               onTap: () =>  Navigator.push(context,
@@ -164,9 +173,16 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Taksi çağırma işlemi başlatıldı!')),
-          );
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+              builder: (context) => TaksiCagirSayfasi(
+            name: name,
+            surname: surname,
+            phone: widget.userPhone,
+            email: email,
+          ),
+          ),);
         },
         label: Text('Taksi Çağır'),
         icon: Icon(Icons.local_taxi),
