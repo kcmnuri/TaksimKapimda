@@ -17,10 +17,10 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Telefon Numaranızı Girin'),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -31,12 +31,12 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
               Icon(
                 Icons.phone,
                 size: 100,
-                color: Colors.white,
+                color: Colors.black,
               ),
               SizedBox(height: 20),
               Text(
                 'Telefon numaranızı girin ve devam edin.',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: TextStyle(color: Colors.grey[700], fontSize: 20),
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 40),
@@ -49,9 +49,9 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                 ],
                 decoration: InputDecoration(
                   labelText: 'Telefon Numarası',
-                  labelStyle: TextStyle(color: Colors.white),
+                  labelStyle: TextStyle(color: Colors.black),
                   hintText: '(5XX) XXX XX XX',
-                  hintStyle: TextStyle(color: Colors.white70),
+                  hintStyle: TextStyle(color: Colors.grey),
                   filled: true,
                   fillColor: Colors.white24,
                   border: OutlineInputBorder(
@@ -65,8 +65,8 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                 child: Text('Başla'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
-                  backgroundColor: Colors.yellow[700],
-                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.grey[700],
+                  foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),

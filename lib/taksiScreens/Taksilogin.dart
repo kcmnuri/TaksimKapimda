@@ -43,24 +43,46 @@ class _TaksiGecisKontrolEkraniState extends State<TaksiGecisKontrolEkrani> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Taksici Giriş / Kayıt")),
-      backgroundColor: Color(0xFFCC9933),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Telefon Numaranızı Girin'),
+            Text(
+              'Telefon numaranızı girin ve devam edin.',
+              style: TextStyle(color: Colors.grey[700], fontSize: 15),
+              textAlign: TextAlign.center,
+            ),
             TextField(
               controller: _phoneController,
               keyboardType: TextInputType.phone,
-              decoration: InputDecoration(hintText: '5XX XXX XXXX'),
+              decoration: InputDecoration(
+              labelText: 'Telefon Numarası',
+              labelStyle: TextStyle(color: Colors.black),
+              hintText: '(5XX) XXX XX XX',
+              hintStyle: TextStyle(color: Colors.grey),
+              filled: true,
+              fillColor: Colors.white24,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
             ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: _devamEt,
               child: Text('Devam Et'),
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(double.infinity, 50),
+                backgroundColor: Colors.grey[700],
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
             ),
-          ],
+            ),
+        ],
         ),
       ),
     );

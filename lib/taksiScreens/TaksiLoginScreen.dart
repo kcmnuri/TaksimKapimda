@@ -14,6 +14,7 @@ class TaksiLoginEkrani extends StatefulWidget {
 class _TaksiLoginEkraniState extends State<TaksiLoginEkrani> {
   final TextEditingController _sifreController = TextEditingController();
   bool _loading = false;
+  bool _obscurePassword = true;
 
   Future<void> _girisYap() async {
     final girilenSifre = _sifreController.text.trim();
@@ -38,7 +39,7 @@ class _TaksiLoginEkraniState extends State<TaksiLoginEkrani> {
       if (kayitliSifre == girilenSifre) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => TaksiAnasayfa()),
+          MaterialPageRoute(builder: (_) => TaksiAnasayfa(telefon: widget.phone,)),
 
         );
       } else {
@@ -61,17 +62,40 @@ class _TaksiLoginEkraniState extends State<TaksiLoginEkrani> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Taksici Giriş")),
-      backgroundColor: Color(0xFFCC9933),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Şifrenizi girin"),
+            Text("Şifrenizi girin",style: TextStyle(color: Colors.grey[700], fontSize: 15),
+              textAlign: TextAlign.center,)
+            ,
             TextField(
               controller: _sifreController,
               obscureText: true,
-              decoration: InputDecoration(hintText: "••••••"),
+              decoration: InputDecoration(
+              labelText: 'Şifre',
+              labelStyle: TextStyle(color: Colors.grey[800]),
+              hintText: 'Şifrenizi girin',
+              hintStyle: TextStyle(color: Colors.grey[800]),
+              filled: true,
+              fillColor: Colors.white24,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              suffixIcon: IconButton(
+                icon: Icon(
+                  _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                  color: Colors.white70,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _obscurePassword = !_obscurePassword;
+                  });
+                },
+              ),
+            ),
             ),
             SizedBox(height: 20),
             _loading

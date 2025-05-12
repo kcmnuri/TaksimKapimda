@@ -30,17 +30,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.white,
       body: Column(
         children: [
-          // Uygulama ikonunu gösterelim
+
           Container(
-            padding: EdgeInsets.only(top: 100),
-            child: Icon(
-              Icons.local_taxi, // İkonu değiştirebilirsiniz
-              size: 100,
-              color: Colors.white,
-            ),
+            padding: EdgeInsets.only(top: 60),
+            child:
+              Image.asset("assets/images/icon.png",
+              width:200,
+                height: 200,
+              )
+
           ),
           // Sayfa Görüntüleyicisi
           Expanded(
@@ -53,6 +54,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   'Kibar Olun',
                   'Uygulamamızda hem taksiciler hem de müşteriler birbirini puanlar. Nezaket puanınız, deneyiminizi doğrudan etkiler.',
                   isLastPage: false,
+
                 ),
                 // 2. Adım
                 _buildPage(
@@ -79,7 +81,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 width: _currentPage == index ? 30 : 10,
                 height: 10,
                 decoration: BoxDecoration(
-                  color: _currentPage == index ? Colors.yellow : Colors.grey,
+                  color: _currentPage == index ? Colors.brown[300] : Colors.grey,
                   borderRadius: BorderRadius.circular(5),
                 ),
               );
@@ -92,10 +94,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             onPressed: _goToNextPage,
             child: Text(
               'Devam Et',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 18,
+                  color: Colors.white),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.yellow[700],
+              backgroundColor: Colors.grey[700],
               foregroundColor: Colors.black,
               minimumSize: Size(double.infinity, 50),
               shape: RoundedRectangleBorder(
@@ -113,10 +116,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             },
             child: Text(
               'Başla',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 18,color: Colors.white),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.yellow[700],
+              backgroundColor: Colors.grey[700],
               foregroundColor: Colors.black,
               minimumSize: Size(double.infinity, 50),
               shape: RoundedRectangleBorder(
@@ -143,7 +146,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
             ),
             textAlign: TextAlign.center,
           ),
@@ -152,7 +155,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             description,
             style: TextStyle(
               fontSize: 16,
-              color: Colors.white70,
+              color: Colors.grey[900],
             ),
             textAlign: TextAlign.center,
           ),

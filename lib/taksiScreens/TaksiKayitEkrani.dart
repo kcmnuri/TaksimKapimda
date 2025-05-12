@@ -50,7 +50,7 @@ class _TaksiKayitEkraniState extends State<TaksiKayitEkrani> {
     // Kayıt işlemi başarılı, kullanıcıyı bir sonraki ekrana yönlendiriyoruz
     Navigator.pushAndRemoveUntil(
       context,
-      MaterialPageRoute(builder: (_) => TaksiAnasayfa()),
+      MaterialPageRoute(builder: (_) => TaksiAnasayfa(telefon: widget.phone,)),
           (route) => false,
     );
   }

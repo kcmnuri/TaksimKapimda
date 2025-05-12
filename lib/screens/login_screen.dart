@@ -19,10 +19,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Şifre Girişi'),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -30,11 +30,12 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.lock, size: 100, color: Colors.white),
+              Icon(Icons.lock, size: 100, color: Colors.black),
               SizedBox(height: 20),
               Text(
                 'Lütfen şifrenizi girin.',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: TextStyle(color: Colors.grey[800
+                ], fontSize: 20),
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 40),
@@ -43,9 +44,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: _obscurePassword,
                 decoration: InputDecoration(
                   labelText: 'Şifre',
-                  labelStyle: TextStyle(color: Colors.white),
+                  labelStyle: TextStyle(color: Colors.grey[800]),
                   hintText: 'Şifrenizi girin',
-                  hintStyle: TextStyle(color: Colors.white70),
+                  hintStyle: TextStyle(color: Colors.grey[800]),
                   filled: true,
                   fillColor: Colors.white24,
                   border: OutlineInputBorder(
@@ -78,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   child: Text(
                     'Şifremi Unuttum?',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.grey[800]),
                   ),
                 ),
               ),
@@ -88,8 +89,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Text('Giriş Yap'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
-                  backgroundColor: Colors.yellow[700],
-                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.grey[700],
+                  foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
